@@ -16,6 +16,7 @@ powershell "Import-Csv .\address.csv -Encoding UTF8 | Sort-Object Name"
 ) else ( echo "address.csv not found")
 
 set /p addr=
+set "addr=%addr: =%"
 
 %PathToAnyDesk%\%run% %addr% --plain
 
